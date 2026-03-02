@@ -2,15 +2,12 @@
 
 ![img](output.png)
 
-A production-ready web API for SAM3 (Segment Anything Model 3) inference running on Modal infrastructure.
+Running SAM-3 by AI at Meta on Modal GPUs.
 
 ## Features
 
 - **Image Segmentation**: Text-prompted image segmentation
 - **Video Segmentation**: Text-prompted video frame segmentation across sequences
-- **Scalable**: Runs on Modal with GPU acceleration (L40S)
-- **Simple API**: REST endpoints with JSON payloads
-- **Base64 Image Support**: Easy image uploading via base64 encoding
 
 ## Prerequisites
 
@@ -21,11 +18,23 @@ A production-ready web API for SAM3 (Segment Anything Model 3) inference running
 ## Installation
 
 ```bash
-# Install dependencies
-pip install -e .
+pip install uv
+uv sync
+```
 
-# Or install Modal CLI
-pip install modal
+## Environment Keys
+
+In a `.env` file:
+
+```bash
+IMAGE_ENDPOINT="<endpoint>"
+VIDEO_ENDPOINT="<endpoint>"
+```
+
+And set up HuggingFace token secret on Modal:
+
+```bash
+uv run modal secret create huggingface HF_TOKEN="<HF TOKEN>"
 ```
 
 ## Deployment
@@ -33,13 +42,19 @@ pip install modal
 Deploy to Modal:
 
 ```bash
-modal run modal_app.py
+uv run modal run modal_app.py
 ```
 
 Or for a persistent deployment:
 
 ```bash
-modal deploy modal_app.py
+uv run modal deploy modal_app.py
+```
+
+Example inference:
+
+```bash
+uv run infer_golden_gate.py
 ```
 
 ## API Endpoints
