@@ -1,0 +1,18 @@
+[project]
+name = "sam3-on-modal"
+version = "0.1.0"
+description = "SAM3 Inference API on Modal"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "modal",
+    "torch",
+    "torchvision",
+    "pillow",
+    "numpy",
+    "opencv-python",
+    "fastapi",
+    "pydantic",
+    "python-dotenv>=1.2.1",
+    "requests>=2.32.5",
+]
