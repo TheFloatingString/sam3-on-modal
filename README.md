@@ -1,6 +1,6 @@
 # SAM3 Inference API on Modal
 
-!(img)[output.png]
+![img](output.png)
 
 A production-ready web API for SAM3 (Segment Anything Model 3) inference running on Modal infrastructure.
 
