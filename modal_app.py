@@ -36,7 +36,7 @@ image = (
     gpu="l40s",
     secrets=[modal.Secret.from_name("huggingface")],
     volumes={HF_CACHE_PATH: hf_cache_vol},
-    min_containers=1,
+    container_idle_timeout=90,
 )
 class SAM3ImagePredictor:
 
@@ -86,6 +86,7 @@ class SAM3ImagePredictor:
     gpu="l40s",
     secrets=[modal.Secret.from_name("huggingface")],
     volumes={HF_CACHE_PATH: hf_cache_vol},
+    container_idle_timeout=90,
 )
 class SAM3VideoPredictor:
 
