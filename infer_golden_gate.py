@@ -88,7 +88,7 @@ if __name__ == "__main__":
     IMAGE_URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Golden_Gate_Bridge_as_seen_from_Battery_East.jpg/1920px-Golden_Gate_Bridge_as_seen_from_Battery_East.jpg"
 
     # Load Modal endpoint from environment variables
-    MODAL_ENDPOINT = os.getenv("IMAGE_ENDPOINT", "https://your-workspace--sam3-inference-infer-image.modal.run")
+    MODAL_ENDPOINT = os.getenv("IMAGE_ENDPOINT")
 
     # Text prompt for segmentation
     PROMPT = "bridge"

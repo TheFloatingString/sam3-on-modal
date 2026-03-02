@@ -93,8 +93,8 @@ def add_video_prompt(modal_url: str, session_id: str, frame_index: int, prompt: 
 
 if __name__ == "__main__":
     # Load endpoints from environment variables
-    IMAGE_ENDPOINT = os.getenv("IMAGE_ENDPOINT", "https://your-workspace--sam3-inference-infer-image.modal.run")
-    VIDEO_ENDPOINT = os.getenv("VIDEO_ENDPOINT", "https://your-workspace--sam3-inference-infer-video.modal.run")
+    IMAGE_ENDPOINT = os.getenv("IMAGE_ENDPOINT")
+    VIDEO_ENDPOINT = os.getenv("VIDEO_ENDPOINT")
 
     # Example: Image inference
     print("Image Inference Example:")
